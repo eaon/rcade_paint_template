@@ -1,0 +1,36 @@
+name: Deploy to RCade
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy to RCade
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Setup Gleam
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: "28"
+          gleam-version: "1.13.0"
+          rebar3-version: "3"
+      - name: Install dependencies
+        run: bun install
+      - name: Download Gleam dependencies
+        run: gleam deps download
+      - name: Build Lustre application
+        run: gleam -m lustre/dev build
+      - name: Deploy to RCade
+        uses: fcjr/rcade/action-deploy@main

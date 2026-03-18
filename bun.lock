@@ -1,0 +1,21 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "dependencies": {
+        "@rcade/plugin-input-classic": "^0.2.3",
+        "@rcade/plugin-input-spinners": "^0.2.2",
+      },
+    },
+  },
+  "packages": {
+    "@rcade/plugin-input-classic": ["@rcade/plugin-input-classic@0.2.3", "", { "dependencies": { "@rcade/sdk": "^0.2.1" }, "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-HEpnhh0HyCMZgLJEzeusVQ/zbxNrfcwZ1plAiGu4a6NSdmYiLGSy4ESPICTNTBWeOR1yATUtN/A70LWXOdmHRQ=="],
+
+    "@rcade/plugin-input-spinners": ["@rcade/plugin-input-spinners@0.2.2", "", { "dependencies": { "@rcade/sdk": "^0.2.2" }, "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-O1j/a+UNoeS2ZB/T7D0LpWLGGHh+EqEtR+xluijB8icT13VN3qpPhb9cOKIq9iOfwvwyvm03pgiJ9YP4jMM/pA=="],
+
+    "@rcade/sdk": ["@rcade/sdk@0.2.2", "", { "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-K9Vq/YWGUdvNYXEWSwPFGy2GJ7wKQP1ePyhKFzcj7uRD+Hcg5W3TE8vlpTaIgI2GC56+s72H0Ngqhpq/CVuQRw=="],
+
+    "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
+  }
+}

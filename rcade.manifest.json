@@ -1,0 +1,22 @@
+{
+  "$schema": "https://rcade.dev/manifest.schema.json",
+  "name": "rcade_lustre_paint_template",
+  "display_name": "Lustre Paint Demo",
+  "description": "For lovers of functional shenanigans",
+  "visibility": "public",
+  "authors": [
+    {
+      "display_name": "Michael Z / eaon"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "@rcade/input-classic",
+      "version": "1.0.0"
+    },
+    {
+      "name": "@rcade/input-spinners",
+      "version": "1.0.0"
+    }
+  ]
+}
