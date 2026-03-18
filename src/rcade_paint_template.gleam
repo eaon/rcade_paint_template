@@ -27,7 +27,7 @@ type Model {
 }
 
 fn init(_flags) {
-  let model = Model(n: 0, offset_x: 0.0, offset_y: 0.0)
+  let model = Model(n: 1, offset_x: 0.0, offset_y: 0.0)
   let effects =
     effect.batch([
       inputs.poll(every: 16, with: fn(p1, p2, _system) { Controls(p1, p2) }),
@@ -56,9 +56,18 @@ fn update(model: Model, msg: Msg) {
       // Both spinners affect Incr/Decr
       let spin_delta = p1.spinner.step_delta + p2.spinner.step_delta
 
+      let button_delta = case
+        p1.controls.b || p2.controls.b,
+        p1.controls.a || p2.controls.a
+      {
+        True, _ -> 1
+        _, True -> -1
+        _, _ -> 0
+      }
+
       #(
         Model(
-          n: model.n + spin_delta,
+          n: model.n + spin_delta + button_delta,
           offset_x: model.offset_x +. dx,
           offset_y: model.offset_y +. dy,
         ),

@@ -33,3 +33,6 @@ bun = "system"
 
 [tools.lustre.html]
 stylesheets = [{ href = "/style.css" }]
+
+[tools.lustre.build]
+minify = true
